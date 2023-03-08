@@ -15,6 +15,7 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String code;
+    private String amount;
     private String currency;
     private String state;
 }
