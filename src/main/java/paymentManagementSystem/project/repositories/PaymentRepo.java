@@ -15,7 +15,7 @@ public interface PaymentRepo extends JpaRepository<Payment, Long> {
     @Query("SELECT sum(amount) FROM Payment WHERE currency = :currency AND state = 'DONE'")
     BigDecimal filterByCurrency(@PathVariable("currency") String currency);
 
-    @Query("SELECT id FROM Payment WHERE keyWord = :keyWord ")
+    @Query("SELECT id FROM Payment WHERE keyWord LIKE :keyWord% ")
     List<Long> findPaymentByKeyWord(@PathVariable("keyWord") String keyWord);
 
 
